@@ -1,0 +1,12 @@
+{
+  "name": "pair-programming",
+  "version": "1.0.0",
+  "description": "Programming with Stas & Luka",
+  "main": "main.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Luka, Stas",
+  "license": "ISC",
+  "type": "module"
+}
