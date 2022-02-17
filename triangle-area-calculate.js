@@ -31,6 +31,9 @@ export class Triangle {
       console.log("Attempting to use sca calculation...");
       area = this.#useScaleneCalculation();
     }
+
+    console.log(area);
+
     return area;
   }
 
