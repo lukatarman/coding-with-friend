@@ -33,6 +33,7 @@ export class Triangle {
     }
 
     console.log(area);
+    console.log(a);
 
     return area;
   }
