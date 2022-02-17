@@ -5,3 +5,6 @@ const eTriangle = new Triangle(5, 5, 5);
 const iTriangle = new Triangle(6, 4, 6);
 
 console.log(sTriangle.calculateArea());
+
+console.log("Git testing");
+console.log("Another git test");
