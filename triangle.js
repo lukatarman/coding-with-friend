@@ -32,10 +32,6 @@ export class Triangle {
       area = this.#useScaleneCalculation();
     }
 
-    console.log(area);
-
-    console.log('Stas was here!');
-
     return area;
   }
 
