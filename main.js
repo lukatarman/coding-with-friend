@@ -1,4 +1,5 @@
 import { Triangle } from "./triangle-area-calculate.js";
+import { myFunc } from "./test.js";
 
 const sTriangle = new Triangle(3, 6, 7);
 const eTriangle = new Triangle(5, 5, 5);
@@ -10,3 +11,5 @@ console.log("Git testing");
 console.log("Another git test");
 console.log("Test 2");
 console.log("Test 3");
+
+myFunc();
