@@ -34,8 +34,7 @@ export class Triangle {
 
     console.log(area);
 
-    console.log("Stas was here!");
-    console.log("Luka test!");
+    console.log('Stas was here!');
 
     return area;
   }
