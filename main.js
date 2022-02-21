@@ -9,4 +9,3 @@ console.log(sTriangle.calculateArea());
 
 console.log("Git testing");
 console.log("Another git test");
-myTest();
