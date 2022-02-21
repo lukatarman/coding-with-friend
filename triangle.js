@@ -5,6 +5,10 @@ export class Triangle {
   #s;
 
   constructor(a, b, c) {
+    if (a <= 0) throw new Error('side a can not be negative or zero');
+    if (b <= 0) throw new Error('side b can not be negative or zero');
+    if (c <= 0) throw new Error('side c can not be negative or zero');
+
     this.#a = a;
     this.#b = b;
     this.#c = c;
