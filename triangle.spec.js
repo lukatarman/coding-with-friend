@@ -12,35 +12,38 @@ function runTests(...tests) {
   startTesting();
   tests.forEach((t, i) => {
     console.log(`--------TEST-${i + 1}--------`);
-    t()
+    console.log(`Function under test: ${t.name}`);
+    console.log(`Output: ...`);
+
+    t();
+
+    if ((i + 1) < tests.length) console.log('\n');
   });
   endTesting();
 }
 
 function calculateAreaResultTruthyTest() {
-  const functionName = 'calculateAreaResultTruthyTest';
   const firstTri = new Triangle(3, 6, 7);
 
   if (firstTri.calculateArea()) {
-    console.log(functionName, ' test passed');
+    console.log('test passed');
   } else {
-    console.log(functionName, ' test failed');
+    console.log('test failed');
   }
 }
 
 function calculateAreaResultFalsyTest() {
-  const functionName = 'calculateAreaResultFalsyTest';
   const firstTri = new Triangle(-3, 6, 7);
 
   if (firstTri.calculateArea()) {
-    console.log(functionName, ' test passed');
+    console.log('test passed');
   } else {
-    console.log(functionName, ' test failed');
+    console.log('test failed');
   }
 }
-
 
 runTests(
   calculateAreaResultTruthyTest,
   calculateAreaResultFalsyTest,
 );
+
