@@ -28,6 +28,19 @@ function calculateAreaResultTruthyTest() {
   }
 }
 
+function calculateAreaResultFalsyTest() {
+  const functionName = 'calculateAreaResultFalsyTest';
+  const firstTri = new Triangle(-3, 6, 7);
+
+  if (firstTri.calculateArea()) {
+    console.log(functionName, ' test passed');
+  } else {
+    console.log(functionName, ' test failed');
+  }
+}
+
+
 runTests(
   calculateAreaResultTruthyTest,
+  calculateAreaResultFalsyTest,
 );
