@@ -25,6 +25,7 @@ export class Triangle {
     if (a + b < c || a + c < b || b + c < a) {
       throw new Error("This is an impossible triangle.");
     }
+    return true;
   }
 
   calculateArea() {
@@ -38,7 +39,7 @@ export class Triangle {
       console.log("This is an equilateral triangle");
       console.log("Attempting to use equilateral calculation...");
       area = this.#useEquilateralCalcualtion();
-    } else if (this.#rightTriangleTest()) {
+    } else if (this.rightTriangleTest()) {
       console.log("This is a RIGHT triangle");
       console.log("Attempting to use right triangle calculation...");
       area = this.#useRightTriangleCalculation();
@@ -105,7 +106,7 @@ export class Triangle {
     );
   }
 
-  #rightTriangleTest() {
+  rightTriangleTest() {
     const a = this.#a;
     const b = this.#b;
     const c = this.#c;
