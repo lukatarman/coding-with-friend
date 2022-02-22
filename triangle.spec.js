@@ -22,9 +22,13 @@ function runTests(...tests) {
   endTesting();
 }
 
-function triangleSideValidValueTest() {
+// function triangleRightAngleTest() {
+//   const testTri = new Triangle(3, 4, 5);
+// }
+
+function triangleSideValueValidTest() {
   try {
-    new Triangle(-3, 6, 7);
+    new Triangle(4, 6, 7);
   } catch (error) {
     console.log(error);
   }
@@ -53,5 +57,5 @@ function calculateAreaResultFalsyTest() {
 runTests(
   calculateAreaResultTruthyTest,
   calculateAreaResultFalsyTest,
-  triangleSideValidValueTest
+  triangleSideValueValidTest
 );
