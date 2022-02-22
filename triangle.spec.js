@@ -1,11 +1,11 @@
 import { Triangle } from "./triangle.js";
 
 function startTesting() {
-  console.log('-------TESTING-START-----');
+  console.log("-------TESTING-START-----");
 }
 
 function endTesting() {
-  console.log('-------TESTING-END-----');
+  console.log("-------TESTING-END-----");
 }
 
 function runTests(...tests) {
@@ -17,33 +17,29 @@ function runTests(...tests) {
 
     t();
 
-    if ((i + 1) < tests.length) console.log('\n');
+    if (i + 1 < tests.length) console.log("\n");
   });
   endTesting();
 }
 
 function calculateAreaResultTruthyTest() {
-  const firstTri = new Triangle(3, 6, 7);
+  const firstTri = new Triangle(100, 6, 7);
 
   if (firstTri.calculateArea()) {
-    console.log('test passed');
+    console.log("test passed");
   } else {
-    console.log('test failed');
+    console.log("test failed");
   }
 }
 
 function calculateAreaResultFalsyTest() {
-  const firstTri = new Triangle(-3, 6, 7);
+  const firstTri = new Triangle(4, 6, 7);
 
   if (firstTri.calculateArea()) {
-    console.log('test passed');
+    console.log("test passed");
   } else {
-    console.log('test failed');
+    console.log("test failed");
   }
 }
 
-runTests(
-  calculateAreaResultTruthyTest,
-  calculateAreaResultFalsyTest,
-);
-
+runTests(calculateAreaResultTruthyTest, calculateAreaResultFalsyTest);
