@@ -1,4 +1,4 @@
-import { Triangle } from "./triangle-area-calculate.js";
+import { Triangle } from "./triangle.js";
 
 const sTriangle = new Triangle(3, 6, 7);
 const eTriangle = new Triangle(5, 5, 5);
