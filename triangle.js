@@ -28,6 +28,8 @@ export class Triangle {
       area = this.#useEquilateralCalcualtion();
     } else if (this.#rightTriangleTest()) {
       console.log("This is a RIGHT triangle");
+      console.log("Attempting to use right triangle calculation...");
+      area = this.#useRightTriangleCalculation();
     } else if (a === b || b === c) {
       console.log("This is a isosceles triangle");
       console.log("Attempting to use iso calculation...");
@@ -45,6 +47,22 @@ export class Triangle {
     console.log("Using equi calculation");
     this.testCalc();
     return (Math.sqrt(3) / 4) * Math.pow(this.#a, 2);
+  }
+
+  #useRightTriangleCalculation() {
+    console.log("Using right triangle calculation");
+
+    const a = this.#a;
+    const b = this.#b;
+    const c = this.#c;
+
+    if (Math.pow(a, 2) + Math.pow(b, 2) === Math.pow(c, 2)) {
+      return 0.5 * a * b;
+    } else if (Math.pow(a, 2) + Math.pow(c, 2) === Math.pow(b, 2)) {
+      return 0.5 * a * c;
+    } else if (Math.pow(c, 2) + Math.pow(b, 2) === Math.pow(a, 2)) {
+      return 0.5 * c * b;
+    }
   }
 
   #useIsoscelesCalculation() {
@@ -86,8 +104,6 @@ export class Triangle {
       Math.pow(c, 2) + Math.pow(b, 2) === Math.pow(a, 2)
     ) {
       return true;
-    } else {
-      return false;
     }
   }
 }
