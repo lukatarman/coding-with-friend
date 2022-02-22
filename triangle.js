@@ -5,14 +5,26 @@ export class Triangle {
   #s;
 
   constructor(a, b, c) {
-    if (a <= 0) throw new Error("side a can not be negative or zero");
-    if (b <= 0) throw new Error("side b can not be negative or zero");
-    if (c <= 0) throw new Error("side c can not be negative or zero");
-
     this.#a = a;
     this.#b = b;
     this.#c = c;
     this.#s = (a + b + c) / 2;
+
+    this.checkIfValidTriangle();
+  }
+
+  checkIfValidTriangle() {
+    const a = this.#a;
+    const b = this.#b;
+    const c = this.#c;
+
+    if (a <= 0) throw new Error("side a can not be negative or zero");
+    if (b <= 0) throw new Error("side b can not be negative or zero");
+    if (c <= 0) throw new Error("side c can not be negative or zero");
+
+    if (a + b < c || a + c < b || b + c < a) {
+      throw new Error("This is an impossible triangle.");
+    }
   }
 
   calculateArea() {
