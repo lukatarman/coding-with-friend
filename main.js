@@ -7,6 +7,3 @@ const rTriangle = new Triangle(5, 3, 4);
 
 console.log(sTriangle.calculateArea());
 rTriangle.calculateArea();
-
-console.log("Git testing");
-console.log("Another git test");
