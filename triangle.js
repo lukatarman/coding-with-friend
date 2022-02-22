@@ -5,9 +5,9 @@ export class Triangle {
   #s;
 
   constructor(a, b, c) {
-    if (a <= 0) throw new Error('side a can not be negative or zero');
-    if (b <= 0) throw new Error('side b can not be negative or zero');
-    if (c <= 0) throw new Error('side c can not be negative or zero');
+    if (a <= 0) throw new Error("side a can not be negative or zero");
+    if (b <= 0) throw new Error("side b can not be negative or zero");
+    if (c <= 0) throw new Error("side c can not be negative or zero");
 
     this.#a = a;
     this.#b = b;
@@ -26,6 +26,8 @@ export class Triangle {
       console.log("This is an equilateral triangle");
       console.log("Attempting to use equi calculation...");
       area = this.#useEquilateralCalcualtion();
+    } else if (this.#rightTriangleTest()) {
+      console.log("This is a RIGHT triangle");
     } else if (a === b || b === c) {
       console.log("This is a isosceles triangle");
       console.log("Attempting to use iso calculation...");
@@ -71,5 +73,21 @@ export class Triangle {
     return Math.sqrt(
       this.#s * (this.#s - this.#a) * (this.#s - this.#b) * (this.#s - this.#c)
     );
+  }
+
+  #rightTriangleTest() {
+    const a = this.#a;
+    const b = this.#b;
+    const c = this.#c;
+
+    if (
+      Math.pow(a, 2) + Math.pow(b, 2) === Math.pow(c, 2) ||
+      Math.pow(a, 2) + Math.pow(c, 2) === Math.pow(b, 2) ||
+      Math.pow(c, 2) + Math.pow(b, 2) === Math.pow(a, 2)
+    ) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }
