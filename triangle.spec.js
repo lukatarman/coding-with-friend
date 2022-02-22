@@ -22,20 +22,8 @@ function runTests(...tests) {
   endTesting();
 }
 
-// function triangleRightAngleTest() {
-//   const testTri = new Triangle(3, 4, 5);
-// }
-
-function triangleSideValueValidTest() {
-  try {
-    new Triangle(4, 6, 7);
-  } catch (error) {
-    console.log(error);
-  }
-}
-
 function calculateAreaResultTruthyTest() {
-  const firstTri = new Triangle(3, 6, 7);
+  const firstTri = new Triangle(100, 6, 7);
 
   if (firstTri.calculateArea()) {
     console.log("test passed");
@@ -54,8 +42,4 @@ function calculateAreaResultFalsyTest() {
   }
 }
 
-runTests(
-  calculateAreaResultTruthyTest,
-  calculateAreaResultFalsyTest,
-  triangleSideValueValidTest
-);
+runTests(calculateAreaResultTruthyTest, calculateAreaResultFalsyTest);
