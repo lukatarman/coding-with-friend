@@ -107,16 +107,19 @@ export class Triangle {
   }
 
   isRightTriangle() {
-    const a = this.#a;
-    const b = this.#b;
-    const c = this.#c;
+    const aSq = Math.pow(this.#a, 2);
+    const bSq = Math.pow(this.#b, 2);
+    const cSq = Math.pow(this.#c, 2);
 
-    if (
-      Math.pow(a, 2) + Math.pow(b, 2) === Math.pow(c, 2) ||
-      Math.pow(a, 2) + Math.pow(c, 2) === Math.pow(b, 2) ||
-      Math.pow(c, 2) + Math.pow(b, 2) === Math.pow(a, 2)
-    ) {
+    if (aSq + bSq === cSq)
       return true;
-    }
+
+    if (aSq + cSq === bSq)
+      return true;
+
+    if (cSq + bSq === aSq)
+      return true;
+
+    return false;
   }
 }
