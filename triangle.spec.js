@@ -44,5 +44,60 @@ describe("Triangle", () => {
 
   xdescribe(".calculateArea", () => {});
 
-  xdescribe(".isRightTriangle", () => {});
+  describe(".isRightTriangle returns true", () => {
+    describe("when a^2 + b^2 is the same as c^2 then", () => {
+      let result;
+
+      beforeAll(() => {
+        const triangle = new Triangle(3, 4, 5);
+        result = triangle.isRightTriangle();
+      });
+
+      it("returns true", () => {
+        expect(result).toBeTrue();
+      });
+    });
+
+    describe("when a^2 + c^2 is the same as b^2 then", () => {
+      let result;
+
+      beforeAll(() => {
+        const triangle = new Triangle(3, 5, 4);
+        result = triangle.isRightTriangle();
+      });
+
+      it("returns true", () => {
+        expect(result).toBeTrue();
+      });
+    });
+
+    describe("when c^2 + b^2 is the same as a^2 then", () => {
+      let result;
+
+      beforeAll(() => {
+        const triangle = new Triangle(5, 3, 4);
+        result = triangle.isRightTriangle();
+      });
+
+      it("returns true", () => {
+        expect(result).toBeTrue();
+      });
+    });
+
+    describe(
+      "when a^2 + b^2 is not equals c^2 and \n" +
+      "when b^2 + c^2 is not equals a^2 and \n" +
+      "when a^2 + c^2 is not equals b^2 then \n", () => {
+      let result;
+
+      beforeAll(() => {
+        const triangle = new Triangle(3, 4, 6);
+        result = triangle.isRightTriangle();
+      });
+
+      it("returns false", () => {
+        expect(result).toBeFalse();
+      });
+    });
+  });
 });
