@@ -1,11 +1,10 @@
 import { Triangle } from "./triangle.js";
 
 describe("Triangle", () => {
-
   describe("when initialization is successfull", () => {
     let triangle;
 
-    beforeAll(()=> {
+    beforeAll(() => {
       triangle = new Triangle(1, 2, 3);
     });
 
@@ -17,7 +16,7 @@ describe("Triangle", () => {
   describe("initialization fails", () => {
     let thrownError;
 
-    beforeAll(()=> {
+    beforeAll(() => {
       try {
         new Triangle(-1, 2, 3);
       } catch (error) {
@@ -33,7 +32,7 @@ describe("Triangle", () => {
   describe(".checkIfValidTriangle is called on a triangle with sides 1, 2, 3", () => {
     let result;
 
-    beforeAll(()=> {
+    beforeAll(() => {
       const triangle = new Triangle(1, 2, 3);
       result = triangle.checkIfValidTriangle();
     });
@@ -43,11 +42,7 @@ describe("Triangle", () => {
     });
   });
 
-  xdescribe(".calculateArea", () => {
+  xdescribe(".calculateArea", () => {});
 
-  });
-
-  xdescribe(".isRightTriangle", () => {
-
-  });
+  xdescribe(".isRightTriangle", () => {});
 });
