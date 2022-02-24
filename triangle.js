@@ -39,7 +39,7 @@ export class Triangle {
       console.log("This is an equilateral triangle");
       console.log("Attempting to use equilateral calculation...");
       area = this.#useEquilateralCalcualtion();
-    } else if (this.rightTriangleTest()) {
+    } else if (this.isRightTriangle()) {
       console.log("This is a RIGHT triangle");
       console.log("Attempting to use right triangle calculation...");
       area = this.#useRightTriangleCalculation();
@@ -106,7 +106,7 @@ export class Triangle {
     );
   }
 
-  rightTriangleTest() {
+  isRightTriangle() {
     const a = this.#a;
     const b = this.#b;
     const c = this.#c;
