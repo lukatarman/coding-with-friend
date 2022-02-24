@@ -4,9 +4,13 @@
   "description": "Programming with Stas & Luka",
   "main": "main.js",
   "scripts": {
-    "test": "test"
+    "test": "jasmine **spec.js"
   },
   "author": "Luka, Stas",
   "license": "ISC",
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "jasmine": "^4.0.2",
+    "jasmine-spec-reporter": "^7.0.0"
+  }
 }
