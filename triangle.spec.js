@@ -1,45 +1,53 @@
 import { Triangle } from "./triangle.js";
 
-function startTesting() {
-  console.log("-------TESTING-START-----");
-}
+describe("Triangle", () => {
 
-function endTesting() {
-  console.log("-------TESTING-END-----");
-}
+  describe("when initialization is successfull", () => {
+    let triangle;
 
-function runTests(...tests) {
-  startTesting();
-  tests.forEach((t, i) => {
-    console.log(`--------TEST-${i + 1}--------`);
-    console.log(`Function under test: ${t.name}`);
-    console.log(`Output: ...`);
+    beforeAll(()=> {
+      triangle = new Triangle(1, 2, 3);
+    });
 
-    t();
-
-    if (i + 1 < tests.length) console.log("\n");
+    it("a valid triangle instance is created", () => {
+      expect(triangle).toBeInstanceOf(Triangle);
+    });
   });
-  endTesting();
-}
 
-function calculateAreaResultTruthyTest() {
-  const firstTri = new Triangle(100, 6, 7);
+  describe("initialization fails", () => {
+    let thrownError;
 
-  if (firstTri.calculateArea()) {
-    console.log("test passed");
-  } else {
-    console.log("test failed");
-  }
-}
+    beforeAll(()=> {
+      try {
+        new Triangle(-1, 2, 3);
+      } catch (error) {
+        thrownError = error;
+      }
+    });
 
-function calculateAreaResultFalsyTest() {
-  const firstTri = new Triangle(4, 6, 7);
+    it("side a is negative and an error is thrown", () => {
+      expect(thrownError).toBeInstanceOf(Error);
+    });
+  });
 
-  if (firstTri.calculateArea()) {
-    console.log("test passed");
-  } else {
-    console.log("test failed");
-  }
-}
+  describe(".checkIfValidTriangle is called on a triangle with sides 1, 2, 3", () => {
+    let result;
 
-runTests(calculateAreaResultTruthyTest, calculateAreaResultFalsyTest);
+    beforeAll(()=> {
+      const triangle = new Triangle(1, 2, 3);
+      result = triangle.checkIfValidTriangle();
+    });
+
+    it("returns true", () => {
+      expect(result).toBeTruthy();
+    });
+  });
+
+  xdescribe(".calculateArea", () => {
+
+  });
+
+  xdescribe(".isRightTriangle", () => {
+
+  });
+});
