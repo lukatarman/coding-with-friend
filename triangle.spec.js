@@ -143,7 +143,7 @@ describe("Triangle", () => {
 
     beforeAll(() => {
       const triangle = new Triangle(1, 2, 3);
-      result = triangle.checkIfValidTriangle();
+      result = triangle.validate();
     });
 
     it("returns true", () => {

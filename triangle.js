@@ -10,10 +10,10 @@ export class Triangle {
     this.#c = c;
     this.#s = (a + b + c) / 2;
 
-    this.checkIfValidTriangle();
+    this.validate();
   }
 
-  checkIfValidTriangle() {
+  validate() {
     const a = this.#a;
     const b = this.#b;
     const c = this.#c;
