@@ -14,19 +14,86 @@ describe("Triangle", () => {
   });
 
   describe("initialization fails", () => {
-    let thrownError;
+    describe("when side a is negative", () => {
+      let error; // given side a = -1 , side b = 2, side c = 3;
 
-    beforeAll(() => {
-      try {
-        new Triangle(-1, 2, 3);
-      } catch (error) {
-        thrownError = error;
-      }
+      beforeAll(() => {
+        try {
+          new Triangle(-1, 2, 3); // when
+        } catch (err) {
+          error = err;
+        }
+      });
+
+      // then
+      it("will throw an error", () => {
+        expect(error).toBeInstanceOf(Error);
+      });
+
+      it("the error message is 'side a can not be negative or zero'", () => {
+        expect(error.message).toBe("side a can not be negative or zero")
+      });
     });
 
-    it("side a is negative and an error is thrown", () => {
-      expect(thrownError).toBeInstanceOf(Error);
+    describe("when side b is negative", () => {
+      let error;
+
+      beforeAll(() => {
+        try {
+          new Triangle(1, -2, 3);
+        } catch (err) {
+          error = err;
+        }
+      });
+
+      it("will throw an error", () => {
+        expect(error).toBeInstanceOf(Error);
+      });
+
+      it("the error message is 'side b can not be negative or zero'", () => {
+        expect(error.message).toBe("side b can not be negative or zero")
+      });
     });
+
+    describe("when side c is negative", () => {
+      let error;
+
+      beforeAll(() => {
+        try {
+          new Triangle(3, 6, -3)
+        } catch(err) {
+          error = err;
+        }
+      });
+
+      it("will throw an error", () => {
+        expect(error).toBeInstanceOf(Error);
+      });
+      it("the error message is 'side c can not be negative or zero'", () => {
+        expect(error.message).toBe("side c can not be negative or zero")
+      });
+    });
+
+    describe("when a + b is smaller than c", () => {
+      it("will throw an error", () => {});
+      it("the error message is 'This is an impossible triangle.'", () => {});
+    });
+
+
+
+    // let thrownError;
+
+    // beforeAll(() => {
+    //   try {
+    //     new Triangle(-1, 2, 3);
+    //   } catch (error) {
+    //     thrownError = error;
+    //   }
+    // });
+
+    // it("side a is negative and an error is thrown", () => {
+    //   expect(thrownError).toBeInstanceOf(Error);
+    // });
   });
 
   describe(".checkIfValidTriangle is called on a triangle with sides 1, 2, 3", () => {
