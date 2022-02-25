@@ -94,7 +94,49 @@ describe("Triangle", () => {
         expect(error.message).toBe("This is an impossible triangle.");
       });
     });
+
+    describe("when a + c is smaller than b", () => {
+      let error;
+
+      beforeAll(() => {
+        try{
+          new Triangle(3, 9, 4);
+        } catch(err) {
+          error = err;
+        }
+      });
+
+      it("will throw an error", () => {
+        expect(error).toBeInstanceOf(Error);
+      });
+
+      it("the error message is 'This is an impossible triangle.'", () => {
+        expect(error.message).toBe("This is an impossible triangle.");
+      });
+    });
+
+    describe("when b + c is smaller than a", () => {
+      let error;
+
+      beforeAll(() => {
+        try{
+          new Triangle(9, 4, 3);
+        } catch(err) {
+          error = err;
+        }
+      });
+
+      it("will throw an error", () => {
+        expect(error).toBeInstanceOf(Error);
+      });
+
+      it("the error message is 'This is an impossible triangle.'", () => {
+        expect(error.message).toBe("This is an impossible triangle.");
+      });
+    });
   });
+
+
 
   describe(".checkIfValidTriangle is called on a triangle with sides 1, 2, 3", () => {
     let result;
