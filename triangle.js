@@ -5,18 +5,15 @@ export class Triangle {
   #s;
 
   constructor(a, b, c) {
+    this.#validate(a, b, c);
+
     this.#a = a;
     this.#b = b;
     this.#c = c;
     this.#s = (a + b + c) / 2;
-
-    this.#validate();
   }
 
-  #validate() {
-    const a = this.#a;
-    const b = this.#b;
-    const c = this.#c;
+  #validate(a, b ,c) {
 
     if (a <= 0) throw new Error("side a can not be negative or zero");
     if (b <= 0) throw new Error("side b can not be negative or zero");
