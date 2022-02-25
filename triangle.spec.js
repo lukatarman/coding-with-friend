@@ -136,21 +136,6 @@ describe("Triangle", () => {
     });
   });
 
-
-
-  describe(".checkIfValidTriangle is called on a triangle with sides 1, 2, 3", () => {
-    let result;
-
-    beforeAll(() => {
-      const triangle = new Triangle(1, 2, 3);
-      result = triangle.validate();
-    });
-
-    it("returns true", () => {
-      expect(result).toBeTruthy();
-    });
-  });
-
   xdescribe(".calculateArea", () => {});
 
   describe(".isRightTriangle returns true", () => {
