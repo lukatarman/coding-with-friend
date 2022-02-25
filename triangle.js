@@ -22,7 +22,6 @@ export class Triangle {
     if (a + b < c || a + c < b || b + c < a) {
       throw new Error("This is an impossible triangle.");
     }
-    return true;
   }
 
   calculateArea() {
