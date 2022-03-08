@@ -14,22 +14,6 @@ describe("Triangle", () => {
   });
 
   describe("initialization fails", () => {
-    let thrownError;
-
-    beforeAll(() => {
-      try {
-        new Triangle(-1, 2, 3);
-      } catch (error) {
-        thrownError = error;
-      }
-    });
-
-    it("side a is negative and an error is thrown", () => {
-      expect(thrownError).toBeInstanceOf(Error);
-    });
-  });
-
-  describe(".checkIfValidTriangle throws error", () => {
     describe("when side a is smaller than 1", () => {
       let thrownError;
 
@@ -140,15 +124,18 @@ describe("Triangle", () => {
         "when sides a and c added are not smaller than side b \n" +
         "when sides b and c added are not smaller than side a",
       () => {
-        let result;
+        let thrownError;
 
         beforeAll(() => {
-          let triangle = new Triangle(1, 2, 3);
-          result = triangle.checkIfValidTriangle();
+          try {
+            new Triangle(1, 2, 3);
+          } catch (error) {
+            thrownError = error;
+          }
         });
 
-        it("returns true", () => {
-          expect(result).toBeTrue();
+        it("initialization does not throw error", () => {
+          expect(thrownError).toBeUndefined;
         });
       }
     );
