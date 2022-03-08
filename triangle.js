@@ -22,9 +22,15 @@ export class Triangle {
     if (b <= 0) throw new Error("side b can not be negative or zero");
     if (c <= 0) throw new Error("side c can not be negative or zero");
 
-    if (a + b < c || a + c < b || b + c < a) {
-      throw new Error("This is an impossible triangle.");
-    }
+    if (a + b < c)
+      throw new Error("sides a and b added cannot be smaller than side c");
+
+    if (a + c < b)
+      throw new Error("sides a and c added cannot be smaller than side b");
+
+    if (b + c < a)
+      throw new Error("sides b and c added cannot be smaller than side a");
+
     return true;
   }
 
@@ -111,14 +117,11 @@ export class Triangle {
     const bSq = Math.pow(this.#b, 2);
     const cSq = Math.pow(this.#c, 2);
 
-    if (aSq + bSq === cSq)
-      return true;
+    if (aSq + bSq === cSq) return true;
 
-    if (aSq + cSq === bSq)
-      return true;
+    if (aSq + cSq === bSq) return true;
 
-    if (cSq + bSq === aSq)
-      return true;
+    if (cSq + bSq === aSq) return true;
 
     return false;
   }
